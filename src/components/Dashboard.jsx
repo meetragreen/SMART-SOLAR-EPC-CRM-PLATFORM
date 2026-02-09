@@ -21,8 +21,9 @@ export default function Dashboard({ user, onLogout }) {
   useEffect(() => {
     if (!user?.systemId) return;
 
-    axios
-      .get(`http://localhost:5000/api/projects/client/${user.systemId}`)
+    axios.get(
+      `${import.meta.env.VITE_API_URL}/api/projects/client/${user.systemId}`
+)
       .then((res) => {
         setProject(res.data);
         setLoading(false);
@@ -193,12 +194,12 @@ export default function Dashboard({ user, onLogout }) {
                  <span className="badge">Updated</span>
               </div>
               <ul className="doc-list">
-                 <li><span>📄 Quotation</span> <a href="#">Download</a></li>
-                 <li><span>📝 Agreement Copy</span> <a href="#">Download</a></li>
-                 <li><span>📐 System Layout</span> <a href="#">Download</a></li>
-                 <li><span>⚡ Net Meter Approval</span> <a href="#">Download</a></li>
-                 <li><span>📄 Subsidy Papers</span> <a href="#">Download</a></li>
-                 <li><span>✅ Commissioning Cert.</span> <a href="#">Download</a></li>
+                 <li><span>📄 Quotation</span> <a href="/" onClick={(e) => e.preventDefault()}>Download</a></li>
+                 <li><span>📝 Agreement Copy</span> <a href="/" onClick={(e) => e.preventDefault()}>Download</a></li>
+                 <li><span>📐 System Layout</span> <a href="/" onClick={(e) => e.preventDefault()}>Download</a></li>
+                 <li><span>⚡ Net Meter Approval</span> <a href="/" onClick={(e) => e.preventDefault()}>Download</a></li>
+                 <li><span>📄 Subsidy Papers</span> <a href="/" onClick={(e) => e.preventDefault()}>Download</a></li>
+                 <li><span>✅ Commissioning Cert.</span> <a href="/" onClick={(e) => e.preventDefault()}>Download</a></li>
               </ul>
             </section>
 
