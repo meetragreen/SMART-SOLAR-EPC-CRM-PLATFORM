@@ -1,0 +1,314 @@
+/* ===========================
+   Employee Dashboard Styles
+   =========================== */
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: #f4f7ff;
+}
+
+/* ===========================
+   Sidebar
+   =========================== */
+
+.admin-sidebar {
+  width: 260px;
+  background: #0b3b5c;
+  color: #fff;
+  padding: 25px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.admin-logo {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.admin-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar nav ul li {
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-sidebar nav ul li:hover {
+  background: #0f4f7a;
+}
+
+.admin-sidebar nav ul li.active {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+/* ===========================
+   Main Content
+   =========================== */
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+}
+
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.admin-topbar h1 {
+  font-size: 24px;
+  color: #0b3b5c;
+}
+
+.admin-topbar span {
+  color: #1d2a4d;
+  font-weight: 500;
+}
+
+/* ===========================
+   Dashboard Stats
+   =========================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+  color: #0b3b5c;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+/* ===========================
+   Inquiry & Application
+   =========================== */
+
+.inquiry-section,
+.application-section {
+  margin-top: 30px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #0b3b5c;
+}
+
+.section-title p {
+  margin: 6px 0 14px;
+  color: #6b7a8a;
+}
+
+.inquiry-grid,
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Cards */
+
+.inquiry-card,
+.application-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 123, 255, 0.18);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+}
+
+.inquiry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   Status Badges
+   =========================== */
+
+.status {
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: #ffe8d9;
+  color: #ff6b00;
+}
+
+.complete,
+.reviewed {
+  background: #d8ffe8;
+  color: #0f9d58;
+}
+
+/* ===========================
+   Action Buttons
+   =========================== */
+
+.inquiry-actions,
+.application-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.action-btn.complete,
+.action-btn.reviewed {
+  background: #0f9d58;
+  color: #fff;
+}
+
+.action-btn.pending {
+  background: #ff6b00;
+  color: #fff;
+}
+
+/* ===========================
+   Projects Section
+   =========================== */
+
+.projects-section {
+  margin-top: 30px;
+}
+
+.projects-section h2 {
+  font-size: 22px;
+  color: #0b3b5c;
+  margin-bottom: 15px;
+}
+
+/* Project Form */
+
+.project-form {
+  max-width: 520px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(13, 110, 253, 0.15);
+}
+
+.project-form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #d6dbe8;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.project-form input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+}
+
+/* Create Project Button */
+
+.project-form button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #0d6efd;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-form button:hover {
+  background: #0b5ed7;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .admin-main {
+    padding: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inquiry-grid,
+  .application-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-form {
+    width: 100%;
+    padding: 20px;
+  }
+}

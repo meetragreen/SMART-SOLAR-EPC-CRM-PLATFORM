@@ -1,0 +1,100 @@
+.survey {
+  background: linear-gradient(135deg, #e9fff2, #f5fff8);
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.survey-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.survey-left h1 {
+  font-size: 2.6rem;
+  color: #1e7f43;
+  margin-bottom: 20px;
+}
+
+.survey-left p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.survey-benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.survey-benefits li {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.survey-right {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.survey-right h2 {
+  text-align: center;
+  color: #1e7f43;
+  margin-bottom: 25px;
+}
+
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.survey-form input,
+.survey-form select {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.survey-form input:focus,
+.survey-form select:focus {
+  outline: none;
+  border-color: #1e7f43;
+}
+
+.survey-form button {
+  margin-top: 10px;
+  background-color: #1e7f43;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.survey-form button:hover {
+  background-color: #f9c74f;
+  color: #1e7f43;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .survey-container {
+    grid-template-columns: 1fr;
+  }
+
+  .survey-left h1 {
+    font-size: 2.2rem;
+  }
+}

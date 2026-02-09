@@ -1,0 +1,186 @@
+/* ===========================================
+   VARIABLES (Locally scoped to be safe)
+=========================================== */
+:root {
+  --meetra-green: #b4e400; /* Lime Green */
+  --meetra-dark: #002a52;  /* Dark Blue */
+  --text-grey: #444444;    /* Dark Grey for paragraphs */
+  --bg-white: #ffffff;
+}
+
+/* ===========================================
+   SECTION WRAPPER
+=========================================== */
+.home-info {
+  background-color: var(--bg-white);
+  padding: 80px 5%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   IMAGE SECTION
+=========================================== */
+.home-info-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.home-info-image img {
+  width: 90%;
+  max-width: 500px;
+  height: 80%;
+  max-height: 720px;
+  border-radius: 12px;
+  object-fit: cover;
+  /* Optional: Soft shadow matching the clean look */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
+}
+
+/* ===========================================
+   CONTENT SECTION
+=========================================== */
+.home-info-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: left; /* Ensure text aligns left */
+}
+
+/* Subtitle with Light Green Background (Matching Image) */
+.subtitle-wrapper {
+  display: inline-block;
+  background-color: #f4fce3; /* Light Green BG */
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.home-info-subtitle {
+  color: #7ab800; /* Darker Green text */
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Main Title */
+.home-info-title {
+  font-size: 42px;
+  color: var(--meetra-dark);
+  margin-bottom: 15px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* Sub-Heading with Green Border Line */
+.home-info-heading {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #555;
+  border-left: 4px solid var(--meetra-green); /* The green line */
+  padding-left: 15px;
+  line-height: 1.4;
+}
+
+/* Paragraphs - FIXED VISIBILITY */
+.home-info-text {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: #444444 !important; /* Forces dark color so it's visible */
+  font-size: 16px;
+}
+
+.home-info-text strong {
+  color: var(--meetra-dark); /* Highlights bold text in Blue */
+}
+
+/* ===========================================
+   BUTTON (Lime Green)
+=========================================== */
+.home-info-btn {
+  background-color: var(--meetra-green);
+  color: #000; /* Black text for contrast */
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(180, 228, 0, 0.4);
+}
+
+.home-info-btn:hover {
+  background-color: #a3d900;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(180, 228, 0, 0.6);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+=========================================== */
+
+/* Tablet (1024px and down) */
+@media (max-width: 1024px) {
+  .home-info-container {
+    flex-direction: column; /* Stack vertically */
+    gap: 40px;
+    text-align: center;
+  }
+
+  .home-info-content {
+    align-items: center;
+    text-align: center; /* Center text on tablet */
+  }
+
+  /* Adjust border for centered text */
+  .home-info-heading {
+    border-left: none;
+    border-bottom: 3px solid var(--meetra-green);
+    display: inline-block;
+    padding-left: 0;
+    padding-bottom: 10px;
+  }
+}
+
+/* Mobile Phones (480px and down) */
+@media (max-width: 480px) {
+  .home-info {
+    padding: 50px 20px;
+  }
+
+  .home-info-subtitle {
+    font-size: 12px;
+  }
+
+  .home-info-title {
+    font-size: 30px;
+  }
+
+  .home-info-heading {
+    font-size: 18px;
+  }
+
+  .home-info-text {
+    font-size: 15px;
+    text-align: left; /* Keep paragraphs left-aligned for readability */
+  }
+
+  .home-info-btn {
+    width: 100%; /* Full width button on mobile */
+  }
+}

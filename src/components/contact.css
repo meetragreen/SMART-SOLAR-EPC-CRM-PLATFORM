@@ -1,0 +1,315 @@
+:root {
+  --blue: #1074c6;
+  --green: #22c55e;
+  --orange: #f97316;
+  --light-bg: #f8f9fb;
+  --dark: #333;
+  --text-grey: #555;
+  --radius: 12px;
+  --gradient: linear-gradient(135deg, #0052a3, #00a9e0);
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset for sizing consistency */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.contact-page {
+  font-family: "Poppins", sans-serif;
+  background: var(--light-bg);
+  color: var(--dark);
+  padding: 60px 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== TOP SECTION (Globe + Info) ===== */
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h2 {
+  color: var(--blue);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.contact-top {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align vertically center */
+  flex-wrap: wrap; /* Allows stacking on mobile */
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-globe {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.contact-globe img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  /* Optional: subtle float animation */
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== CONTACT CARDS ===== */
+.contact-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 280px; /* Prevents squishing on small screens */
+  max-width: 100%;
+}
+
+.contact-box {
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  width: 100%; /* Take full width of parent */
+  text-align: left;
+  border-left: 5px solid #e0e0e0;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateX(5px);
+}
+
+/* Specific Border Colors */
+.contact-box.call { border-left-color: var(--green); }
+.contact-box.mail { border-left-color: var(--blue); }
+.contact-box.address { border-left-color: var(--orange); }
+
+.contact-box h4 {
+  color: var(--blue);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-box p,
+.contact-box a {
+  color: var(--text-grey);
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+/* ===== SUBTITLE ===== */
+.contact-subtitle {
+  text-align: center;
+  margin: 60px 0 40px;
+}
+
+.contact-subtitle h3 {
+  color: var(--blue);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.contact-subtitle p {
+  color: var(--text-grey);
+  font-size: 1.1rem;
+}
+
+/* ===== FORM SECTION ===== */
+.contact-form-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Makes both cards equal height */
+  gap: 0; /* Removing gap for seamless look, or use margin */
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden; /* Ensures radius clips images */
+}
+
+/* Left: Form */
+.contact-form-card {
+  background: var(--gradient);
+  color: #fff;
+  padding: 40px;
+  flex: 1;
+  min-width: 320px; /* Don't get smaller than iPhone width */
+}
+
+.contact-form-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.contact-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+  background: #fff;
+  border-color: #b4e400; /* Green focus ring */
+}
+
+.contact-form-card button {
+  background: linear-gradient(90deg, #25ab16, #b4e400);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-form-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Right: Image */
+.contact-img {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.contact-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== MAP SECTION ===== */
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================= */
+
+/* Tablet (1024px and down) */
+@media (max-width: 1024px) {
+  .contact-top {
+    gap: 30px;
+  }
+}
+
+/* Mobile Devices (768px and down) */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 40px 15px;
+  }
+
+  .contact-header h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Stack Globe and Details */
+  .contact-top {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-details {
+    width: 100%;
+    align-items: center; /* Center boxes on mobile */
+  }
+
+  /* Form Section Stack */
+  .contact-form-section {
+    flex-direction: column;
+    border-radius: var(--radius);
+  }
+
+  .contact-form-card,
+  .contact-img {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .contact-img {
+    height: 250px; /* Limit image height on mobile */
+  }
+}
+
+/* Small Phones (480px and down) */
+@media (max-width: 480px) {
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-box {
+    padding: 15px;
+  }
+
+  .contact-form-card {
+    padding: 25px 20px;
+  }
+
+  .contact-form-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form-card input,
+  .contact-form-card textarea {
+    font-size: 0.95rem; /* Prevent auto-zoom on iOS */
+    padding: 12px;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+}

@@ -1,0 +1,98 @@
+.installation {
+  background-color: #f5fff8;
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.installation-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.installation-title {
+  font-size: 2.5rem;
+  color: #1e7f43;
+  margin-bottom: 10px;
+}
+
+.installation-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.step-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.step-card h3 {
+  color: #1e7f43;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.step-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cta-section {
+  margin-top: 70px;
+}
+
+.cta-section h3 {
+  color: #1e7f43;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background-color: #1e7f43;
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #f9c74f;
+  color: #1e7f43;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .installation-title {
+    font-size: 2rem;
+  }
+
+  .cta-section h3 {
+    font-size: 1.3rem;
+  }
+}

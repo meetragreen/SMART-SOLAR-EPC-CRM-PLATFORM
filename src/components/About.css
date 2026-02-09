@@ -1,0 +1,346 @@
+/* =========================
+   ABOUT PAGE – GREEN THEME
+   (Matched with Maintenance Page)
+   ========================= */
+
+:root {
+  /* ===== BRAND GREENS ===== */
+  --green: #2bb673;
+  --green-dark: #0b7a3a;
+  --green-darker: #000000;
+
+  /* ===== BACKGROUNDS ===== */
+  --bg-soft: #f0fbf6;
+  --bg-white: #ffffff;
+  --border-soft: #e5f3ea;
+
+  /* ===== TEXT COLORS ===== */
+  --text-dark: #0b2f1a;
+  --text-grey: #3b4a60;
+  --text-light: #ffffff;
+
+  /* ===== UI ===== */
+  --radius: 18px;
+  --section-padding: 80px 8%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ================= PAGE BASE ================= */
+.about-page {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(
+    180deg,
+    var(--bg-soft) 0%,
+    var(--bg-white) 60%,
+    var(--bg-soft) 100%
+  );
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= HERO SECTION ================= */
+.about-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(51, 122, 88, 0.75)
+  );
+}
+
+.about-hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.about-hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.green-divider {
+  width: 90px;
+  height: 5px;
+  background: var(--green);
+  margin: 0 auto 20px;
+  border-radius: 4px;
+}
+
+.about-hero-text p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ================= COMMON SECTIONS ================= */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: var(--section-padding);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.9s ease forwards;
+}
+
+.about-section:nth-child(2) { animation-delay: 0.2s; }
+.about-section:nth-child(3) { animation-delay: 0.4s; }
+.about-section:nth-child(4) { animation-delay: 0.6s; }
+
+/* Image Wrapper */
+.section-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.section-img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius);
+  box-shadow: 0 14px 35px rgba(11, 122, 58, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 18px 45px rgba(11, 122, 58, 0.3);
+}
+
+/* Text Content */
+.section-content {
+  flex: 1;
+}
+
+.section-content h2 {
+  color: var(--green-dark);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.section-content p {
+  color: var(--text-grey);
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+/* ================= VISION & MISSION ================= */
+.about-section.vision-mission {
+  background: linear-gradient(to right, #f7fff8, #ffffff);
+  border-radius: 24px;
+}
+
+/* ================= VALUES ================= */
+.about-section.values {
+  background: var(--bg-white);
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.values-list li {
+  background: #fff;
+  border-left: 6px solid var(--green);
+  border: 1px solid var(--border-soft);
+  padding: 18px 22px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.values-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(43, 182, 115, 0.25);
+}
+
+.values-list li strong {
+  color: var(--green-dark);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+
+/* ================= CTA SECTION ================= */
+.about-cta {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #0b7a3a, #2bb673);
+  color: #fff;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-cta h2 {
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+}
+
+.about-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: #fff;
+  color: var(--green-dark);
+  border: none;
+  padding: 15px 42px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--green);
+  color: #004d26;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 60px 5%;
+    gap: 30px;
+  }
+
+  .about-hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 60vh;
+  }
+
+  .about-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero-text p {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .about-section.values {
+    flex-direction: column-reverse;
+  }
+
+  .section-content h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+
+  .values-list li {
+    text-align: left;
+  }
+
+  .about-cta h2 {
+    font-size: 1.9rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .about-hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .section-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 14px;
+  }
+}

@@ -1,0 +1,141 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+.login-page {
+  min-height: 100vh;
+  background-image: url('https://res.cloudinary.com/dbnfm5a06/image/upload/v1765770033/vision-min_cmfuyc.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass card */
+.login-card {
+  width: 420px;
+  padding: 32px 28px 36px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Logo section */
+.logo {
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-small {
+    
+  display:inline-block;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-width: 40%;
+}
+
+.logo img {
+  width: 140px;      /* 🔧 change logo size here */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Admin / User toggle */
+.role-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.role-switch button {
+  border: none;
+  padding: 8px 24px;
+  font-size: 14px;
+  border-radius: 20px;
+  background: #e0e0e0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.role-switch button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.role-switch button.active {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 2px solid #4caf50;
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: #777;
+}
+
+.form-group input:focus {
+  border-color: #2e7d32;
+}
+
+/* Sign in button */
+.login-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: #4caf50;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #2e7d32;
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.signup-text span {
+  color: #2e7d32;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #333;
+}

@@ -1,0 +1,85 @@
+/* ================= CAREERS PAGES ================= */
+
+.career-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.career-page h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.career-page p {
+  font-size: 16px;
+  color: #475569;
+  margin-bottom: 30px;
+}
+
+/* ================= JOB CARD ================= */
+
+.job-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.job-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0b8f5c;
+  margin-bottom: 12px;
+}
+
+.job-card p {
+  font-size: 15px;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+/* ================= APPLY BUTTON ================= */
+
+.job-card button {
+  margin-top: 14px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #0b8f5c, #16a34a);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.job-card button:hover {
+  background: linear-gradient(135deg, #08714a, #15803d);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .career-page {
+    padding: 60px 16px;
+  }
+
+  .career-page h1 {
+    font-size: 30px;
+  }
+
+  .job-card {
+    padding: 20px;
+  }
+}

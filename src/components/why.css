@@ -1,0 +1,218 @@
+/* =========================================
+   WHY MEETRA – GREEN THEME
+========================================= */
+
+:root {
+  --brand-green: #b4e400;        /* Meetra Green */
+  --brand-green-dark: #8cb300;
+  --brand-green-darker: #6aa000;
+
+  --bg-soft: #f4fce3;
+  --bg-grey: #f8f9fb;
+
+  --text-black: #000000;         /* ✅ Pure Black */
+  --text-muted: #222;
+
+  --radius: 20px;
+}
+
+/* =========================================
+   SECTION WRAPPER
+========================================= */
+.why-section {
+  padding: 90px 0;
+  background: linear-gradient(
+    180deg,
+    var(--bg-soft) 0%,
+    #ffffff 60%,
+    var(--bg-soft) 100%
+  );
+  width: 100%;
+}
+
+.why-container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+.why-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.why-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-black);
+  margin-bottom: 12px;
+}
+
+.why-title span {
+  color: var(--brand-green-darker);
+}
+
+.why-subtitle {
+  font-size: 16px;
+  color: var(--text-black);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =========================================
+   GRID LAYOUT
+========================================= */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* =========================================
+   CARD DESIGN
+========================================= */
+.why-card {
+  background: #ffffff;
+  padding: 34px 26px;
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  opacity: 0;
+  animation: slideUp 0.8s ease forwards;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(140, 179, 0, 0.35);
+  border-color: var(--brand-green);
+}
+
+/* =========================================
+   ICON
+========================================= */
+.why-icon-wrapper {
+  width: 74px;
+  height: 74px;
+  background: linear-gradient(
+    135deg,
+    #f0ffd2,
+    #e6ffad
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: all 0.4s ease;
+}
+
+.why-card:hover .why-icon-wrapper {
+  background: linear-gradient(
+    135deg,
+    var(--brand-green),
+    var(--brand-green-dark)
+  );
+  transform: scale(1.12) rotate(3deg);
+}
+
+.why-icon {
+  font-size: 34px;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+.why-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-black);
+  margin-bottom: 10px;
+}
+
+.why-card-text {
+  font-size: 15px;
+  color: var(--text-black);
+  line-height: 1.65;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablet */
+@media (min-width: 600px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .why-section {
+    padding: 65px 0;
+  }
+
+  .why-title {
+    font-size: 28px;
+  }
+
+  .why-subtitle {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .why-card {
+    padding: 26px 20px;
+  }
+
+  .why-card-title {
+    font-size: 18px;
+  }
+
+  .why-card-text {
+    font-size: 14px;
+  }
+}

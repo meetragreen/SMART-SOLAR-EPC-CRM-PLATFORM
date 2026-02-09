@@ -1,0 +1,265 @@
+/* =========================
+   Maintenance Page Styles
+   ========================= */
+
+.maintenance-section {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f0fbf6 0%, #ffffff 60%, #f0fbf6 100%);
+  padding: 50px 20px;
+}
+
+.maintenance-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- Hero Section ---------- */
+.maintenance-hero {
+  background: linear-gradient(135deg, #0b7a3a, #2bb673);
+  color: #fff;
+  padding: 40px 35px;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(11, 122, 58, 0.25);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.maintenance-hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  right: -150px;
+  top: -200px;
+}
+
+.maintenance-hero h1 {
+  font-size: 36px;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.hero-tagline {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 12px;
+  font-size: 16px;
+  z-index: 1;
+  position: relative;
+}
+
+.maintenance-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin-top: 18px;
+  font-size: 16px;
+  z-index: 1;
+  position: relative;
+}
+
+/* ---------- Offerings ---------- */
+.maintenance-offerings {
+  margin-top: 30px;
+}
+
+.maintenance-offerings h2 {
+  color: #0b7a3a;
+  margin-bottom: 10px;
+}
+
+.maintenance-offerings p {
+  color: #3b4a60;
+  margin-bottom: 18px;
+}
+
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.offer-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 1px solid #e5f3ea;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+.offer-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: linear-gradient(135deg, #2bb673, #0b7a3a);
+  color: #fff;
+  box-shadow: 0 12px 25px rgba(43, 182, 115, 0.25);
+}
+
+.offer-text h3 {
+  margin: 0;
+  color: #0b7a3a;
+}
+
+.offer-text p {
+  margin: 6px 0 0;
+  color: #3b4a60;
+  line-height: 1.6;
+}
+
+/* ---------- AMC Plans ---------- */
+.maintenance-amc {
+  margin-top: 30px;
+}
+
+.maintenance-amc h2 {
+  color: #0b7a3a;
+  margin-bottom: 10px;
+}
+
+.maintenance-amc p {
+  color: #3b4a60;
+  margin-bottom: 18px;
+}
+
+.amc-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 1px solid #e5f3ea;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+.amc-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.amc-card th,
+.amc-card td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e9eef5;
+}
+
+.amc-card th {
+  background: #f1fbf6;
+  color: #0b7a3a;
+}
+
+.amc-card tr:hover {
+  background: #f7fff8;
+}
+
+/* ---------- Pro Tips ---------- */
+.maintenance-tips {
+  margin-top: 30px;
+}
+
+.maintenance-tips h2 {
+  color: #0b7a3a;
+  margin-bottom: 10px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.tip-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 1px solid #e5f3ea;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: 15px;
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+.tip-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: linear-gradient(135deg, #2bb673, #0b7a3a);
+  color: #fff;
+}
+
+.tip-text h3 {
+  margin: 0;
+  color: #0b7a3a;
+  font-size: 16px;
+}
+
+.tip-text p {
+  margin: 6px 0 0;
+  color: #3b4a60;
+  line-height: 1.6;
+}
+
+/* ---------- Contact Section ---------- */
+.maintenance-contact {
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 25px;
+  border: 1px solid #e5f3ea;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+.maintenance-contact h2 {
+  font-size: 26px;
+  color: #0b7a3a;
+  margin-bottom: 12px;
+}
+
+.maintenance-contact p {
+  color: #3b4a60;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.maintenance-contact strong {
+  color: #0b7a3a;
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .offerings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}

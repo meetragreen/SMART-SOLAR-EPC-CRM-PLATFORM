@@ -1,0 +1,122 @@
+/* Container for the whole timeline */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
+/* The Vertical Line */
+.timeline-line {
+  position: absolute;
+  left: 24px;
+  top: 10px;
+  bottom: 40px;
+  width: 3px;
+  background-color: #e0e0e0;
+  z-index: 0;
+}
+
+/* Individual Stage Row */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.timeline-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* The Icon Box */
+.timeline-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 20px;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+/* --- STATUS COLORS (Icon) --- */
+.timeline-item.completed .timeline-icon {
+  background-color: #2e7d32;
+  color: white;
+  border-color: #2e7d32;
+}
+
+.timeline-item.in-progress .timeline-icon {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border-color: #ef6c00;
+}
+
+.timeline-item.pending .timeline-icon {
+  background-color: #f5f5f5;
+  color: #bdbdbd;
+}
+
+/* Text Styling */
+.timeline-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timeline-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* --- DROPDOWN SELECTOR STYLES --- */
+.status-select {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+  appearance: none; /* Removes default arrow on some browsers */
+  text-align: center;
+  width: 130px;
+}
+
+/* Dropdown Colors based on Value */
+.status-select.completed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.status-select.in-progress {
+  background-color: #fff3e0;
+  color: #e65100;
+  border-color: #ffe0b2;
+}
+
+.status-select.pending {
+  background-color: #f5f5f5;
+  color: #757575;
+  border-color: #e0e0e0;
+}
+
+.status-select:hover {
+  opacity: 0.9;
+  border-color: #aaa;
+}

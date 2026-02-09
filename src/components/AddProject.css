@@ -1,0 +1,60 @@
+.add-project-section {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.add-project-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-project-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-project-form label {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+.add-project-form input,
+.add-project-form select,
+.add-project-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.add-project-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.add-project-form input:focus,
+.add-project-form select:focus,
+.add-project-form textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+}
+
+.save-project-btn {
+  margin-top: 16px;
+  padding: 12px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.save-project-btn:hover {
+  background: #15803d;
+}
