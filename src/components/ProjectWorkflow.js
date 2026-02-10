@@ -20,7 +20,7 @@ export default function ProjectWorkflow({ project, onBack, onUpdate }) {
     try {
       // ✅ Send the String value ('pending', 'in-progress', 'completed')
      const res = await axios.patch(
-  `${import.meta.env.VITE_API_URL}/api/projects/staff/update-progress/${project._id}`, {
+  `${process.env.REACT_APP_API_URL}/api/projects/staff/update-progress/${project._id}`, {
         stage: stageKey,
         value: newStatus 
       });

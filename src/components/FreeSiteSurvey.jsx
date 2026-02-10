@@ -19,7 +19,8 @@ const FreeSiteSurvey = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/survey", formData);
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/survey`, formData);
       alert("📩 Survey Submitted Successfully!");
       setFormData({
         name: "",

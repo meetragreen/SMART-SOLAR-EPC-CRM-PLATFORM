@@ -26,7 +26,7 @@ export default function AddProject() {
   e.preventDefault();
   try {
     await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/projects`,
+      `${process.env.REACT_APP_API_URL}/api/projects`,
       {
         clientRef: projectData.clientRef,
         clientName: projectData.clientName,

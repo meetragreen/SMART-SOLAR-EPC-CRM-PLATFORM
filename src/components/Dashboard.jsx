@@ -22,7 +22,7 @@ export default function Dashboard({ user, onLogout }) {
     if (!user?.systemId) return;
 
     axios.get(
-      `${import.meta.env.VITE_API_URL}/api/projects/client/${user.systemId}`
+      `${process.env.REACT_APP_API_URL}/api/projects/client/${user.systemId}`
 )
       .then((res) => {
         setProject(res.data);

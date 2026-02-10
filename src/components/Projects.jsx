@@ -14,7 +14,7 @@ export default function Projects() {
     const getProjects = async () => {
       try {
         const res = await axios.get(
-  `${import.meta.env.VITE_API_URL}/api/projects`
+  `${process.env.REACT_APP_API_URL}/api/projects`
 );
         setAllProjects(res.data);
       } catch (err) {

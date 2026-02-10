@@ -9,7 +9,7 @@ export default function ProjectDetailView({ project, onBack, onUpdate }) {
       const newValue = !currentValue; // Toggle true/false
       
       const res = await axios.patch(
-       `${import.meta.env.VITE_API_URL}/api/projects/staff/update-progress/${project._id}`, {
+       `${process.env.REACT_APP_API_URL}/api/projects/staff/update-progress/${project._id}`, {
         stage,
         value: newValue
       });
