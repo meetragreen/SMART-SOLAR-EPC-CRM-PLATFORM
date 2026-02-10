@@ -16,7 +16,7 @@ export default function EmployeeDashboard({ user, onLogout }) {
   /* ================= FETCH DATA ================= */
   useEffect(() => {
     if (activeTab === "inquiries") {
-      axios.get("http://localhost:5000/api/survey")
+      axios.get(`${import.meta.env.VITE_API_URL}/api/survey`)
         .then((res) => setInquiries(res.data))
         .catch(() => console.error("Failed to fetch inquiries"));
     }
@@ -24,7 +24,7 @@ export default function EmployeeDashboard({ user, onLogout }) {
 
   useEffect(() => {
     if (activeTab === "applications") {
-      axios.get("http://localhost:5000/api/applications")
+      axios.get(`${import.meta.env.VITE_API_URL}/api/applications`)
         .then((res) => setApplications(res.data))
         .catch(() => console.error("Failed to fetch applications"));
     }
@@ -32,7 +32,7 @@ export default function EmployeeDashboard({ user, onLogout }) {
 
   useEffect(() => {
     if (activeTab === "projects") {
-      axios.get("http://localhost:5000/api/projects")
+      axios.get(`${import.meta.env.VITE_API_URL}/api/projects`)
         .then((res) => setProjects(res.data))
         .catch(() => console.error("Failed to fetch projects"));
     }
@@ -40,7 +40,8 @@ export default function EmployeeDashboard({ user, onLogout }) {
 
   /* ================= UPDATE STATUS HANDLERS ================= */
   const updateInquiryStatus = (id, newStatus) => {
-    axios.patch(`http://localhost:5000/api/survey/${id}`, { status: newStatus })
+    axios.patch(
+      `${import.meta.env.VITE_API_URL}/api/survey/${id}`, { status: newStatus })
       .then((res) => {
         setInquiries((prev) =>
           prev.map((inq) => (inq._id === id ? { ...inq, status: newStatus } : inq))
@@ -50,7 +51,8 @@ export default function EmployeeDashboard({ user, onLogout }) {
   };
 
   const updateApplicationStatus = (id, newStatus) => {
-    axios.patch(`http://localhost:5000/api/applications/${id}`, { status: newStatus })
+    axios.patch(
+     `${import.meta.env.VITE_API_URL}/api/applications/${id}`, { status: newStatus })
       .then((res) => {
         setApplications((prev) =>
           prev.map((app) => (app._id === id ? { ...app, status: newStatus } : app))
