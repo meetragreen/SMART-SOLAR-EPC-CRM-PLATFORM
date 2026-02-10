@@ -19,7 +19,8 @@ export default function ProjectWorkflow({ project, onBack, onUpdate }) {
   const changeStatus = async (stageKey, newStatus) => {
     try {
       // ✅ Send the String value ('pending', 'in-progress', 'completed')
-      const res = await axios.patch(`http://localhost:5000/api/projects/staff/update-progress/${project._id}`, {
+     const res = await axios.patch(
+  `${import.meta.env.VITE_API_URL}/api/projects/staff/update-progress/${project._id}`, {
         stage: stageKey,
         value: newStatus 
       });

@@ -34,7 +34,8 @@ export default function ApplyModal({ isOpen, onClose, jobTitle }) {
       data.append("phone", formData.phone);
       data.append("resume", formData.resume);
 
-      const response = await fetch("http://localhost:5000/api/applications/apply", {
+      const response = await fetch(
+       `${import.meta.env.VITE_API_URL}/api/applications/apply`, {
         method: "POST",
         body: data,
       });
