@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AdminDashboard.css";
-const API_URL = process.env.REACT_APP_API_URL;
-const [employees, setEmployees] = useState([]);
+
 export default function AdminDashboard() {
   const navigate = useNavigate();
 
@@ -182,7 +181,7 @@ const deleteProject = async (id) => {
                   </tr>
                 </thead>
                 <tbody>
-                 {Array.isArray(employees) && employees.map(emp => (
+                  {employees.map(emp => (
                     <tr key={emp._id}>
                       <td>{emp.employeeId}</td>
                       <td>{emp.name}</td>
