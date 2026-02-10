@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import "./ProjectWorkflow.css";
-const API_URL = import.meta.env.VITE_API_URL;
 
 export default function ProjectWorkflow({ project, onBack, onUpdate }) {
 
@@ -20,8 +19,7 @@ export default function ProjectWorkflow({ project, onBack, onUpdate }) {
   const changeStatus = async (stageKey, newStatus) => {
     try {
       // ✅ Send the String value ('pending', 'in-progress', 'completed')
-      const res = await axios.patch(
-        `${API_URL}/api/projects/staff/update-progress/${project._id}`, {
+      const res = await axios.patch(`http://localhost:5000/api/projects/staff/update-progress/${project._id}`, {
         stage: stageKey,
         value: newStatus 
       });

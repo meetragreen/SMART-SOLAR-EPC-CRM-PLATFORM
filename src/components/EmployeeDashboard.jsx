@@ -3,7 +3,7 @@ import axios from "axios";
 import "./EmployeeDashboard.css";
 // ✅ IMPORT THE NEW PROJECT WORKFLOW COMPONENT
 import ProjectWorkflow from "./ProjectWorkflow"; 
-const API_URL = import.meta.env.VITE_API_URL;
+
 export default function EmployeeDashboard({ user, onLogout }) {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [inquiries, setInquiries] = useState([]);
@@ -14,65 +14,51 @@ export default function EmployeeDashboard({ user, onLogout }) {
   const [selectedProject, setSelectedProject] = useState(null);
 
   /* ================= FETCH DATA ================= */
-useEffect(() => {
-  if (activeTab === "inquiries") {
-    axios
-      .get(`${API_URL}/api/survey`)
-      .then((res) => setInquiries(res.data))
-      .catch(() => console.error("Failed to fetch inquiries"));
-  }
-}, [activeTab]);
+  useEffect(() => {
+    if (activeTab === "inquiries") {
+      axios.get("http://localhost:5000/api/survey")
+        .then((res) => setInquiries(res.data))
+        .catch(() => console.error("Failed to fetch inquiries"));
+    }
+  }, [activeTab]);
 
-useEffect(() => {
-  if (activeTab === "applications") {
-    axios
-      .get(`${API_URL}/api/applications`)
-      .then((res) => setApplications(res.data))
-      .catch(() => console.error("Failed to fetch applications"));
-  }
-}, [activeTab]);
+  useEffect(() => {
+    if (activeTab === "applications") {
+      axios.get("http://localhost:5000/api/applications")
+        .then((res) => setApplications(res.data))
+        .catch(() => console.error("Failed to fetch applications"));
+    }
+  }, [activeTab]);
 
-useEffect(() => {
-  if (activeTab === "projects") {
-    axios
-      .get(`${API_URL}/api/projects`)
-      .then((res) => setProjects(res.data))
-      .catch(() => console.error("Failed to fetch projects"));
-  }
-}, [activeTab]);
+  useEffect(() => {
+    if (activeTab === "projects") {
+      axios.get("http://localhost:5000/api/projects")
+        .then((res) => setProjects(res.data))
+        .catch(() => console.error("Failed to fetch projects"));
+    }
+  }, [activeTab]);
 
-/* ================= UPDATE STATUS HANDLERS ================= */
-const updateInquiryStatus = (id, newStatus) => {
-  axios
-    .patch(`${API_URL}/api/survey/${id}`, { status: newStatus })
-    .then(() => {
-      setInquiries((prev) =>
-        prev.map((inq) =>
-          inq._id === id ? { ...inq, status: newStatus } : inq
-        )
-      );
-    })
-    .catch((err) => {
-      console.error(err);
-      alert("Failed to update status.");
-    });
-};
+  /* ================= UPDATE STATUS HANDLERS ================= */
+  const updateInquiryStatus = (id, newStatus) => {
+    axios.patch(`http://localhost:5000/api/survey/${id}`, { status: newStatus })
+      .then((res) => {
+        setInquiries((prev) =>
+          prev.map((inq) => (inq._id === id ? { ...inq, status: newStatus } : inq))
+        );
+      })
+      .catch((err) => { console.error(err); alert("Failed to update status."); });
+  };
 
-const updateApplicationStatus = (id, newStatus) => {
-  axios
-    .patch(`${API_URL}/api/applications/${id}`, { status: newStatus })
-    .then(() => {
-      setApplications((prev) =>
-        prev.map((app) =>
-          app._id === id ? { ...app, status: newStatus } : app
-        )
-      );
-    })
-    .catch((err) => {
-      console.error(err);
-      alert("Failed to update status.");
-    });
-};
+  const updateApplicationStatus = (id, newStatus) => {
+    axios.patch(`http://localhost:5000/api/applications/${id}`, { status: newStatus })
+      .then((res) => {
+        setApplications((prev) =>
+          prev.map((app) => (app._id === id ? { ...app, status: newStatus } : app))
+        );
+      })
+      .catch((err) => { console.error(err); alert("Failed to update status."); });
+  };
+
   /* ================= PROJECT UPDATE HANDLER ================= */
   // This function is passed to the child component (ProjectWorkflow) 
   // to update the main list when a stage is toggled inside the detail view.

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-const API_URL = import.meta.env.VITE_API_URL;
 
 export default function LoginPage({ onLoginSuccess }) {
   const [role, setRole] = useState("user");
@@ -57,11 +56,11 @@ export default function LoginPage({ onLoginSuccess }) {
 
     /* ================= USER / EMPLOYEE LOGIN ================= */
     try {
-      const response = await fetch(`${API_URL}/api/login`, {
-         method: "POST",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify({ email, password }),
-        });
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
       const data = await response.json();
 
