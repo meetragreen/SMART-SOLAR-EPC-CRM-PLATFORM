@@ -34,70 +34,70 @@ export default function AdminDashboard() {
   }, [navigate]);
 
   /* ================= INITIAL LOAD ================= */
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const [empRes, projRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/employees"),
-          axios.get("http://localhost:5000/api/projects"),
-        ]);
-        setEmployees(empRes.data);
-        setProjects(projRes.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    loadData();
-  }, []);
-
-  /* ================= FETCH EMPLOYEES ================= */
-  const fetchEmployees = async () => {
-    setLoading(true);
+useEffect(() => {
+  const loadData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/employees");
-      setEmployees(res.data);
-      setActiveTab("employees");
-    } catch {
-      alert("Failed to load employees");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  /* ================= FETCH PROJECTS ================= */
-  const fetchProjects = async () => {
-    setLoading(true);
-    try {
-      const res = await axios.get("http://localhost:5000/api/projects");
-      setProjects(res.data);
-      setActiveTab("projects");
-    } catch {
-      alert("Failed to load projects");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  /* ================= DELETE ================= */
-  const deleteEmployee = async (id) => {
-    if (!window.confirm("Delete this employee?")) return;
-    try {
-      await axios.delete(`http://localhost:5000/api/employees/${id}`);
-      setEmployees(employees.filter((e) => e._id !== id));
+      const [empRes, projRes] = await Promise.all([
+        axios.get(`${API_URL}/api/employees`),
+        axios.get(`${API_URL}/api/projects`),
+      ]);
+      setEmployees(empRes.data);
+      setProjects(projRes.data);
     } catch (err) {
-      alert("Failed to delete employee");
+      console.error(err);
     }
   };
+  loadData();
+}, []);
 
-  const deleteProject = async (id) => {
-    if (!window.confirm("Delete this project?")) return;
-    try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`);
-      setProjects(projects.filter((p) => p._id !== id));
-    } catch (err) {
-      alert("Failed to delete project");
-    }
-  };
+/* ================= FETCH EMPLOYEES ================= */
+const fetchEmployees = async () => {
+  setLoading(true);
+  try {
+    const res = await axios.get(`${API_URL}/api/employees`);
+    setEmployees(res.data);
+    setActiveTab("employees");
+  } catch {
+    alert("Failed to load employees");
+  } finally {
+    setLoading(false);
+  }
+};
+
+/* ================= FETCH PROJECTS ================= */
+const fetchProjects = async () => {
+  setLoading(true);
+  try {
+    const res = await axios.get(`${API_URL}/api/projects`);
+    setProjects(res.data);
+    setActiveTab("projects");
+  } catch {
+    alert("Failed to load projects");
+  } finally {
+    setLoading(false);
+  }
+};
+
+/* ================= DELETE ================= */
+const deleteEmployee = async (id) => {
+  if (!window.confirm("Delete this employee?")) return;
+  try {
+    await axios.delete(`${API_URL}/api/employees/${id}`);
+    setEmployees(employees.filter((e) => e._id !== id));
+  } catch (err) {
+    alert("Failed to delete employee");
+  }
+};
+
+const deleteProject = async (id) => {
+  if (!window.confirm("Delete this project?")) return;
+  try {
+    await axios.delete(`${API_URL}/api/projects/${id}`);
+    setProjects(projects.filter((p) => p._id !== id));
+  } catch (err) {
+    alert("Failed to delete project");
+  }
+};
 
   /* ================= LOGOUT ================= */
   const handleLogout = () => {

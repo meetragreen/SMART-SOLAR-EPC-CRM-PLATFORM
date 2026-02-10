@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./FreeSiteSurvey.css";
 import axios from "axios";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const FreeSiteSurvey = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,10 +16,10 @@ const FreeSiteSurvey = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      await axios.post("http://localhost:5000/api/survey", formData);
+  try {
+    await axios.post(`${API_URL}/api/survey`, formData);
       alert("📩 Survey Submitted Successfully!");
       setFormData({
         name: "",

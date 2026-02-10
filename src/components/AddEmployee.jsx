@@ -33,13 +33,15 @@ export default function AddEmployee() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/employees`, {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json" 
-        },
-        body: JSON.stringify(formData),
-      });
+       `${import.meta.env.VITE_API_URL}/api/employees`,
+         {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
 

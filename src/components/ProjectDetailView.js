@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function ProjectDetailView({ project, onBack, onUpdate }) {
 
   /* ================= UPDATE PROJECT PROGRESS ================= */
@@ -8,7 +8,8 @@ export default function ProjectDetailView({ project, onBack, onUpdate }) {
     try {
       const newValue = !currentValue; // Toggle true/false
       
-      const res = await axios.patch(`http://localhost:5000/api/projects/staff/update-progress/${project._id}`, {
+      const res = await axios.patch(
+        `${API_URL}/api/projects/staff/update-progress/${project._id}`, {
         stage,
         value: newValue
       });

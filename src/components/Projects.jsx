@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Projects.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("Industrial");
@@ -13,7 +14,7 @@ export default function Projects() {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/projects");
+        const res = await axios.get(`${API_URL}/api/projects`);
         setAllProjects(res.data);
       } catch (err) {
         console.error("Error fetching projects:", err);

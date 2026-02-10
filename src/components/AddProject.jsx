@@ -22,11 +22,12 @@ export default function AddProject() {
     setProjectData({ ...projectData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // ✅ Sending Direct Links to Backend
-      await axios.post("http://localhost:5000/api/projects", {
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/projects`,
+      {
         clientRef: projectData.clientRef,
         clientName: projectData.clientName,
         siteLocation: projectData.siteLocation,
